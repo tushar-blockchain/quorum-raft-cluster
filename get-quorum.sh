@@ -31,7 +31,7 @@ rm -f $GOREL
 PATH=$PATH:/usr/local/go/bin
 echo 'PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 
-# make/install quorum
+# make/installing quorum
 git clone https://github.com/jpmorganchase/quorum.git
 pushd quorum >/dev/null
 make all
