@@ -1,11 +1,19 @@
 #!/bin/bash
 set -eu -o pipefail
 
+#Installing pakcage wrk
+sudo apt-get install build-essential libssl-dev git -y
+git clone https://github.com/wg/wrk.git wrk
+cd wrk
+make
+# move the executable to somewhere in your PATH, ex:
+sudo cp wrk /usr/local/bin
+
 # install build deps
 add-apt-repository ppa:ethereum/ethereum
 apt-get update
 #apt-get install -y build-essential unzip libdb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
-apt-get install -y build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk software-properties-common default-jdk maven
+apt-get install -y build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner software-properties-common default-jdk maven
 
 # install constellation
 #wget -q https://github.com/jpmorganchase/constellation/releases/download/v0.1.0/constellation-0.3.2-ubuntu1604.tar.xz
